@@ -1,0 +1,48 @@
+# Core Framework
+streamlit==1.29.0
+
+# Data Processing
+pandas==1.5.3
+numpy==1.26.2
+
+# Database
+mysql-connector-python==8.2.0
+SQLAlchemy==2.0.23
+PyMySQL==1.1.0
+
+# Fuzzy Matching
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.23.0
+
+# Authentication & Security
+bcrypt==4.1.2
+python-dotenv==1.0.0
+
+# Progress & UI
+tqdm==4.66.1
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+
+# File Processing
+openpyxl==3.1.2
+xlrd==2.0.1
+
+# Development Tools (Optional but Recommended)
+pytest==7.4.3
+black==23.12.0
+flake8==6.1.0
+mypy==1.7.1
+
+# Logging
+colorlog==6.8.0
+
+# JSON Processing
+ujson==5.9.0
+
+# Performance
+cachetools==5.3.2
+
+# Type Hints
+typing-extensions==4.9.0
