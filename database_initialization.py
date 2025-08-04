@@ -198,6 +198,8 @@ class DatabaseInitializer:
             elif "product_catalog_" in db_name:
                 if not self._create_product_catalog_table():
                     return False
+                if not self._create_product_catalog_triggers():
+                    return False
             elif "synonyms_blacklist_" in db_name:
                 if not self._create_synonyms_blacklist_table():
                     return False
