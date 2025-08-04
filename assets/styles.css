@@ -1,0 +1,303 @@
+/* Enhanced Multi-Client Data Mapping System - Core Styling */
+/* Extracted and refined from streamlit_app.py and admin_interface.py */
+
+/* Global Foundation */
+* {
+    box-sizing: border-box;
+}
+
+/* Main Application Header */
+.main-header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* Liquid Gradient Progress Bar System */
+.liquid-progress {
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.liquid-fill {
+    height: 100%;
+    background: linear-gradient(45deg, #2596be, #ff7f00, #2596be, #ff7f00);
+    background-size: 400% 400%;
+    animation: liquid-flow 3s ease-in-out infinite;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.liquid-fill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: liquid-shine 2s linear infinite;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    z-index: 10;
+}
+
+@keyframes liquid-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes liquid-shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Enhanced Modal System */
+.edit-modal-container {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 2px solid #007bff;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+    animation: modal-fade-in 0.3s ease-out;
+}
+
+@keyframes modal-fade-in {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Progress Container for Dark/Light Themes */
+.progress-container {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #28a745;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dark-mode .progress-container {
+    background: #1e1e1e;
+}
+
+/* Enhanced Button System */
+.stButton > button {
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.stButton > button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Inline Table Row System */
+.inline-row {
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+    transition: all 0.2s ease;
+}
+
+.inline-row:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+    transform: translateX(2px);
+}
+
+/* Highlighted Cell System */
+.highlight-cell {
+    background: linear-gradient(135deg, #fffec6, #fff9c4);
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    padding: 8px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(255, 193, 7, 0.2);
+}
+
+.dark-mode .highlight-cell {
+    background: linear-gradient(135deg, #3a3a1a, #2a2a0a);
+}
+
+/* Status Indicator System */
+.status-indicator {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 2px;
+    animation: status-pulse 2s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.status-inserted {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+}
+
+.status-verified {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+    color: white;
+}
+
+/* Bulk Action Containers */
+.bulk-action-container {
+    background: linear-gradient(135deg, #f1f3f4, #e8eaed);
+    border: 2px solid #1976d2;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.15);
+}
+
+.bulk-action-header {
+    text-align: center;
+    color: #1976d2;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+/* Bulk Save System */
+.bulk-save-container {
+    background: linear-gradient(135deg, #e8f5e8, #f0fff0);
+    border: 3px solid #28a745;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.2);
+    text-align: center;
+}
+
+.bulk-save-header {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+/* Sticky Table Headers */
+.sticky-header {
+    position: sticky;
+    top: 85px;
+    z-index: 10;
+    background-color: #007ab8;
+    color: white;
+}
+
+.dark-mode .sticky-header {
+    background-color: #333;
+}
+
+/* Table Hover Effects */
+tr:hover td.highlight-cell {
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.light-mode tr:hover td.highlight-cell {
+    background-color: #fffec6;
+}
+
+.dark-mode tr:hover td.highlight-cell {
+    background-color: #3a3a1a;
+}
+
+/* Input Focus Effects */
+input:focus, select:focus {
+    outline: none;
+    border: 2px solid #007ab8;
+    box-shadow: 0 0 5px rgba(0,122,185,0.3);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Dark Mode Scrollbar */
+.dark-mode ::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Responsive Design Foundation */
+@media (max-width: 768px) {
+    .main-header { 
+        padding: 1rem; 
+    }
+    
+    .edit-modal-container { 
+        padding: 15px; 
+        margin: 10px 0; 
+    }
+    
+    .bulk-action-container { 
+        padding: 15px; 
+        margin: 15px 0; 
+    }
+    
+    .bulk-save-container { 
+        padding: 20px; 
+        margin: 20px 0; 
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
